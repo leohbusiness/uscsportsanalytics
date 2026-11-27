@@ -83,6 +83,8 @@ def annotate(events: pd.DataFrame, wp: WinProbModel) -> pd.DataFrame:
     pregame = float(wp.predict([0], [48 * 60])[0])
     df["wp_home_before"] = df.groupby("game_id")["wp_home"].shift(1).fillna(pregame)
     df["margin_home_before"] = df.groupby("game_id")["margin_home"].shift(1).fillna(0)
-    df["seconds_before"] = df.groupby("game_id")["seconds_remaining"].shift(1).fillna(48 * 60)
+    same_period = df.groupby(["game_id", "period"])["clock_seconds"]
+    period_len = np.where(df["period"] <= 4, 720, 300)
+    df["clock_before"] = same_period.shift(1).fillna(pd.Series(period_len, index=df.index))
     df["leverage"] = wp.leverage(df["margin_home_before"], secs)
     return df
