@@ -118,4 +118,4 @@ app**, pick this repo, branch `main`, main file `app/streamlit_app.py`. It insta
 See [docs/AI_DISCLOSURE.md](docs/AI_DISCLOSURE.md).
 
 ## Team
-_Add team member names here._
+**Athletic Intelligence:** Minzy Sung, Leo Hwang, Jace Kang, Vincent Huang.
