@@ -60,4 +60,4 @@ HIGH_LEVERAGE_THRESHOLD = 1.5
 # "True reserve": started at most this share of the games he played.
 RESERVE_MAX_START_RATE = 0.5
 # Empirical-Bayes shrinkage: pseudo-stints of zero WPA added when ranking players in a situation.
-SHRINKAGE_STINTS = 5
+SHRINKAGE_STINTS = 10

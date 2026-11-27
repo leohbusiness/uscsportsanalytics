@@ -29,11 +29,11 @@ def _table(df: pd.DataFrame) -> str:
 def main() -> None:
     st = bench_stints(pd.read_parquet(config.APP_DATA))
     rs = st[(st["phase"] == "Regular season") & st["true_reserve"]]
-    overall = rank_players(rs, k=20)
+    overall = rank_players(rs)
     overall = overall[overall["stints"] >= 50].head(15)
-    clutch = rank_players(rs[rs["high_leverage"]], k=10)
+    clutch = rank_players(rs[rs["high_leverage"]])
     clutch = clutch[clutch["stints"] >= 15].head(10)
-    tough = rank_players(rs[rs["opp_strength"] == "Stronger"], k=10)
+    tough = rank_players(rs[rs["opp_strength"] == "Stronger"])
     tough = tough[tough["stints"] >= 25].head(10)
 
     team = rs.groupby("team").agg(stints=("wpa", "size"), raw=("wpa", "sum"),
@@ -47,13 +47,13 @@ In-Season Tournament; {rs['game_id'].nunique():,} games, {len(rs):,} bench stint
 i.e. players who started at most {config.RESERVE_MAX_START_RATE:.0%} of the games they played).
 Score = win probability over expected per stint, shrunk (percentage points of win probability).
 
-## Top reserves overall (min. 50 bench stints, k = 20)
+## Top reserves overall (min. 50 bench stints, k = {config.SHRINKAGE_STINTS})
 {_table(overall)}
 
-## Top reserves in high-leverage moments (entry leverage >= {config.HIGH_LEVERAGE_THRESHOLD}, min. 15 stints, k = 10)
+## Top reserves in high-leverage moments (entry leverage >= {config.HIGH_LEVERAGE_THRESHOLD}, min. 15 stints, k = {config.SHRINKAGE_STINTS})
 {_table(clutch)}
 
-## Top reserves against the strongest opposing lineups (top tercile, min. 25 stints, k = 10)
+## Top reserves against the strongest opposing lineups (top tercile, min. 25 stints, k = {config.SHRINKAGE_STINTS})
 {_table(tough)}
 
 ## Team bench totals (sum of WPA over expected across all bench stints)
