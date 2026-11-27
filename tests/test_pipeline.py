@@ -43,3 +43,17 @@ def test_rank_players_returns_bench_only():
     ranked = rank_players(bench_stints(build_stints(events)))
     assert not ranked["player"].str.endswith(tuple(f" Player {i}" for i in range(1, 6))).any()
     assert ranked["shrunk_wpa_per_stint"].is_monotonic_decreasing
+
+
+def test_standardize_official_format():
+    raw = pd.DataFrame({
+        "game_id": ["0022500001"] * 2, "data_set": ["NBA 2026 Playoffs"] * 2, "period": [1, 1],
+        "remaining_time": ["0:12:00", "0:11:36"], "home_team": ["OKC"] * 2, "away_team": ["HOU"] * 2,
+        "home_score": [0, 2], "away_score": [0, 0], "player": [None, "1631096/Chet Holmgren"],
+        **{f"h{i}": [f"H{i}"] * 2 for i in range(1, 6)}, **{f"a{i}": [f"A{i}"] * 2 for i in range(1, 6)},
+    })
+    df = load.standardize(raw)
+    assert df["clock_seconds"].tolist() == [720, 696]
+    assert df["player"].iloc[1] == "Chet Holmgren"
+    assert df["phase"].iloc[0] == "Playoffs"
+    assert df["home_p1"].iloc[0] == "H1" and df["away_p5"].iloc[0] == "A5"
