@@ -5,24 +5,24 @@ In-Season Tournament; 1,231 games, 47,705 bench stints by true reserves,
 i.e. players who started at most 50% of the games they played).
 Score = win probability over expected per stint, shrunk (percentage points of win probability).
 
-## Top reserves overall (min. 50 bench stints, k = 20)
+## Top reserves overall (min. 50 bench stints, k = 10)
 | Player | Team | Stints | Min | Score (pts win %/stint) | Raw WPA total | Avg entry LI |
 |---|---|---|---|---|---|---|
-| Kevin Huerter | CHI/DET | 272 | 1171 | +1.99 | +5.43 | 1.18 |
-| Jalen Pickett | DEN | 73 | 350 | +1.96 | +2.17 | 0.72 |
-| Taurean Prince | MIL | 84 | 415 | +1.58 | +0.53 | 0.9 |
-| Jordan Goodwin | PHX | 311 | 1306 | +1.53 | +4.51 | 1.07 |
-| Ryan Nembhard | DAL | 108 | 476 | +1.51 | +0.41 | 0.96 |
-| Rasheer Fleming | PHX | 146 | 635 | +1.40 | +3.01 | 0.89 |
-| Gui Santos | GSW | 127 | 492 | +1.40 | +2.54 | 1.19 |
-| Malik Monk | SAC | 255 | 1273 | +1.38 | -3.68 | 0.96 |
-| JD Davison | HOU | 51 | 218 | +1.38 | +1.31 | 0.68 |
-| Pete Nance | MIL | 119 | 537 | +1.37 | +0.59 | 0.76 |
-| Brandon Williams | DAL | 240 | 1063 | +1.32 | +0.03 | 1.05 |
-| Jake LaRavia | LAL | 188 | 786 | +1.30 | +4.28 | 1.06 |
-| Robert Williams III | POR | 275 | 978 | +1.29 | +3.21 | 1.13 |
-| De'Anthony Melton | GSW | 146 | 538 | +1.27 | +2.65 | 1.07 |
-| Nique Clifford | SAC | 197 | 927 | +1.26 | -2.26 | 0.87 |
+| Jalen Pickett | DEN | 73 | 350 | +2.19 | +2.17 | 0.72 |
+| Kevin Huerter | CHI/DET | 272 | 1171 | +2.06 | +5.43 | 1.18 |
+| Taurean Prince | MIL | 84 | 415 | +1.75 | +0.53 | 0.9 |
+| Ryan Nembhard | DAL | 108 | 476 | +1.64 | +0.41 | 0.96 |
+| JD Davison | HOU | 51 | 218 | +1.60 | +1.31 | 0.68 |
+| Jordan Goodwin | PHX | 311 | 1306 | +1.58 | +4.51 | 1.07 |
+| Gui Santos | GSW | 127 | 492 | +1.50 | +2.54 | 1.19 |
+| Rasheer Fleming | PHX | 146 | 635 | +1.49 | +3.01 | 0.89 |
+| Pete Nance | MIL | 119 | 537 | +1.47 | +0.59 | 0.76 |
+| Malik Monk | SAC | 255 | 1273 | +1.44 | -3.68 | 0.96 |
+| Brandon Williams | DAL | 240 | 1063 | +1.37 | +0.03 | 1.05 |
+| Jake LaRavia | LAL | 188 | 786 | +1.36 | +4.28 | 1.06 |
+| De'Anthony Melton | GSW | 146 | 538 | +1.35 | +2.65 | 1.07 |
+| Robert Williams III | POR | 275 | 978 | +1.34 | +3.21 | 1.13 |
+| Nique Clifford | SAC | 197 | 927 | +1.33 | -2.26 | 0.87 |
 
 ## Top reserves in high-leverage moments (entry leverage >= 1.5, min. 15 stints, k = 10)
 | Player | Team | Stints | Min | Score (pts win %/stint) | Raw WPA total | Avg entry LI |

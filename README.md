@@ -97,7 +97,8 @@ the residual. The same opponent rating defines the dashboard's "opponent lineup"
 
 ### 6. The metric: situational WPA over expected per stint, shrunk
 For any situation a coach selects (score, time, opponent unit, leverage), a player's score is
-`sum(WPA over expected) / (stints + k)`, equivalent to adding k zero-value stints. This shrinks
+`sum(WPA over expected) / (stints + k)`, equivalent to adding k zero-value stints, with
+k = 10 everywhere (dashboard and `docs/findings.md`; set in `config.SHRINKAGE_STINTS`). This shrinks
 small samples toward replacement level. The chart shows about one standard error as whiskers.
 
 ### Known limitations (to address or defend)
@@ -117,4 +118,4 @@ app**, pick this repo, branch `main`, main file `app/streamlit_app.py`. It insta
 See [docs/AI_DISCLOSURE.md](docs/AI_DISCLOSURE.md).
 
 ## Team
-_Add team member names here._
+**Athletic Intelligence:** Minzy Sung, Leo Hwang, Jace Kang, Vincent Huang.
